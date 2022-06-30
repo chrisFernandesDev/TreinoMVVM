@@ -4,5 +4,6 @@ import androidx.lifecycle.ViewModel;
 
 public class VMB extends ViewModel {
     public String teste = "B";
-    String nomeUser;
+    public String nomeUser;
+    public String idadeUSer;
 }
