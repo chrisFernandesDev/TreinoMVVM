@@ -39,7 +39,8 @@ public class MainActivityA extends AppCompatActivity {
                 Intent intent = new Intent(MainActivityA.this, MainActivityB.class);
                 String dadosDigtUser = textNome.getText().toString();
                 VMA.nome = dadosDigtUser;
-                Log.d("Teste1", VMA.nome);
+
+                intent.putExtra("resultado", dadosDigtUser);
                 startActivity(intent);
             }
         });

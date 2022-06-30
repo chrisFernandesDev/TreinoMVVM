@@ -3,4 +3,8 @@
     <string name="C">C</string>
     <string name="B">B</string>
     <string name="A">A</string>
+    <string name="resp_para_user">resultado</string>
+    <string name="dataNascimento">dataNascimento</string>
+    <string name="nome">nome</string>
+    <string name="idade">idade</string>
 </resources>
