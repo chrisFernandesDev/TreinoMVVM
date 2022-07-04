@@ -16,7 +16,7 @@ public class MainActivityC extends AppCompatActivity {
 
     VMC VMC;
     private Button buttonC;
-    private TextView aqui;
+    private TextView textLetraC;
     private TextView nomeUser;
     private TextView dataNascimentoUser;
     private TextView idadeUser;
@@ -26,24 +26,12 @@ public class MainActivityC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_c);
 
-        aqui = findViewById(R.id.C);
-        nomeUser = findViewById(R.id.nome_user);
-        dataNascimentoUser = findViewById(R.id.data_nascimento_user);
-        idadeUser = findViewById(R.id.idade_user);
-
-        Intent intent = getIntent();
-        String dadosRecebidosNome = intent.getStringExtra("nome");
-        String dadosRecebidoNascimento = intent.getStringExtra("dataNascimento");
-        String dadosRecebidoIdade = intent.getStringExtra("idade");
+        getView();
 
         VMC = new ViewModelProvider(this).get(VMC.class);
 
-        aqui.setText(VMC.teste);
-        nomeUser.setText(dadosRecebidosNome);
-        dataNascimentoUser.setText(dadosRecebidoNascimento);
-        idadeUser.setText(dadosRecebidoIdade + " anos");
+        setText();
 
-        buttonC = findViewById(R.id.button_c);
 
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,4 +47,25 @@ public class MainActivityC extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void getView(){
+        textLetraC = findViewById(R.id.C);
+        nomeUser = findViewById(R.id.nome_user);
+        dataNascimentoUser = findViewById(R.id.data_nascimento_user);
+        idadeUser = findViewById(R.id.idade_user);
+        buttonC = findViewById(R.id.button_c);
+    }
+
+    public void setText(){
+
+        Intent intent = getIntent();
+        String dadosRecebidosNome = intent.getStringExtra("nome");
+        String dadosRecebidoNascimento = intent.getStringExtra("dataNascimento");
+        String dadosRecebidoIdade = intent.getStringExtra("idade");
+
+        VMC.dataNascimentoUserVM = dadosRecebidoNascimento;
+        textLetraC.setText(VMC.textLetraC);
+        nomeUser.setText(dadosRecebidosNome);
+        dataNascimentoUser.setText(dadosRecebidoNascimento);
+        idadeUser.setText(dadosRecebidoIdade + " anos");
+    }
 }
