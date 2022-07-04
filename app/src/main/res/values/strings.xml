@@ -7,4 +7,7 @@
     <string name="dataNascimento">dataNascimento</string>
     <string name="nome">nome</string>
     <string name="idade">idade</string>
+    <string name="anos">anos</string>
+    <string name="mensagem">Preencha o campo</string>
+    <string name="mensagemNome">Digite um nome valido</string>
 </resources>
